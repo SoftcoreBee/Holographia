@@ -1,13 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://cd7sqnd46xupa"]
+[gd_scene load_steps=5 format=3 uid="uid://cd7sqnd46xupa"]
 
 [ext_resource type="Script" uid="uid://b3q5pauq0pqnj" path="res://script/player.gd" id="1_hjaqi"]
-[ext_resource type="Texture2D" uid="uid://dybw5y3bxmrdc" path="res://asset/player/player.png" id="1_xo3ru"]
+[ext_resource type="Texture2D" uid="uid://dybw5y3bxmrdc" path="res://asset/sprites/player.png" id="1_xo3ru"]
+[ext_resource type="PackedScene" uid="uid://k5xwm65a3x1b" path="res://scene/ability/sword_ability_controller.tscn" id="2_fvtld"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hjaqi"]
 radius = 5.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 0
 script = ExtResource("1_hjaqi")
+
+[node name="AbilityManager" type="Node" parent="."]
+
+[node name="SwordAbilityController" parent="AbilityManager" instance=ExtResource("2_fvtld")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_xo3ru")
