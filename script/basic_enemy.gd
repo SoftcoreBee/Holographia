@@ -4,7 +4,7 @@ const MAX_SPEED = 75
 
 
 func _ready():
-    pass
+    $Area2D.area_entered.connect(on_area_entered)
 
 
 func _process(_delta): 
@@ -18,3 +18,6 @@ func get_direction_to_player():
     if player != null:
         return (player.global_position - global_position).normalized()
     return Vector2.ZERO
+
+func on_area_entered(other_area: Area2D):
+    queue_free()
