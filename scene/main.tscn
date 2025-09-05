@@ -21,3 +21,8 @@ position = Vector2(71, 99)
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 position = Vector2(431, 141)
+
+[node name="BasicEnemy2" parent="." instance=ExtResource("4_brvut")]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(474, 556)
