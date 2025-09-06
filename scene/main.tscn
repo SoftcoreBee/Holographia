@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://qa7pu6xs3335"]
+[gd_scene load_steps=10 format=4 uid="uid://qa7pu6xs3335"]
 
 [ext_resource type="PackedScene" uid="uid://c7plh6iqr6v8o" path="res://scene/arena_time_ui.tscn" id="1_0ha60"]
 [ext_resource type="PackedScene" uid="uid://7uusa4tilrac" path="res://scene/enemy_manager.tscn" id="1_brvut"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cdrfymdt71ptq" path="res://scene/arena_time_manager.tscn" id="2_4j5ol"]
 [ext_resource type="TileSet" uid="uid://bnlgbpnjk8pg7" path="res://asset/resources/grass.tres" id="3_0ha60"]
 [ext_resource type="Script" uid="uid://dbi4exgt6oevb" path="res://script/timer.gd" id="3_p1hux"]
+[ext_resource type="PackedScene" uid="uid://dlrpqgev04pku" path="res://scene/experience_manager.tscn" id="5_b5f6u"]
 [ext_resource type="PackedScene" uid="uid://cjgtpvdctdc6y" path="res://scene/experience_gem.tscn" id="8_of57s"]
 
 [node name="Main" type="Node"]
@@ -18,6 +19,8 @@ arena_time_manager = NodePath("../ArenaTimeManager")
 script = ExtResource("3_p1hux")
 
 [node name="EnemyManager" parent="." instance=ExtResource("1_brvut")]
+
+[node name="ExperienceManager" parent="." instance=ExtResource("5_b5f6u")]
 
 [node name="GamerCam" parent="." instance=ExtResource("1_wp4xf")]
 position = Vector2(320, 172)
