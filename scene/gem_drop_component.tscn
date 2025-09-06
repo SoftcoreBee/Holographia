@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://0xffxc1v5g8i"]
+
+[ext_resource type="Script" uid="uid://dhs87fcjpcf6v" path="res://script/gem_drop_component.gd" id="1_g24ru"]
+[ext_resource type="PackedScene" uid="uid://cjgtpvdctdc6y" path="res://scene/experience_gem.tscn" id="2_5fycs"]
+
+[node name="GemDropComponent" type="Node"]
+script = ExtResource("1_g24ru")
+gem_scene = ExtResource("2_5fycs")
