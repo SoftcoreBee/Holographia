@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cd7sqnd46xupa"]
+[gd_scene load_steps=6 format=3 uid="uid://cd7sqnd46xupa"]
 
 [ext_resource type="Script" uid="uid://b3q5pauq0pqnj" path="res://script/player.gd" id="1_hjaqi"]
 [ext_resource type="Texture2D" uid="uid://dybw5y3bxmrdc" path="res://asset/sprites/player.png" id="1_xo3ru"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hjaqi"]
 radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fvtld"]
+radius = 35.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 0
@@ -19,6 +22,14 @@ shape = SubResource("CircleShape2D_hjaqi")
 [node name="AbilityManager" type="Node" parent="."]
 
 [node name="SwordAbilityController" parent="AbilityManager" instance=ExtResource("2_fvtld")]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_fvtld")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
