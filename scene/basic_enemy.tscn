@@ -21,6 +21,7 @@ collision_mask = 4
 shape = SubResource("CircleShape2D_yveyc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
 texture = ExtResource("1_3puoo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

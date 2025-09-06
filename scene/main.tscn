@@ -1,11 +1,13 @@
 [gd_scene load_steps=5 format=4 uid="uid://qa7pu6xs3335"]
 
+[ext_resource type="PackedScene" uid="uid://7uusa4tilrac" path="res://scene/enemy_manager.tscn" id="1_brvut"]
 [ext_resource type="PackedScene" uid="uid://cd7sqnd46xupa" path="res://scene/player.tscn" id="1_itxqv"]
 [ext_resource type="PackedScene" uid="uid://2wx71yw4gaks" path="res://scene/gamer_cam.tscn" id="1_wp4xf"]
 [ext_resource type="TileSet" uid="uid://bnlgbpnjk8pg7" path="res://asset/resources/grass.tres" id="3_0ha60"]
-[ext_resource type="PackedScene" uid="uid://brqoyuppl0tem" path="res://scene/basic_enemy.tscn" id="4_brvut"]
 
 [node name="Main" type="Node"]
+
+[node name="EnemyManager" parent="." instance=ExtResource("1_brvut")]
 
 [node name="GamerCam" parent="." instance=ExtResource("1_wp4xf")]
 
@@ -15,49 +17,4 @@ tile_map_data = PackedByteArray("AABSAEIAAAASAAEAAABSAEEAAAASAAEAAABSAEAAAAARAAE
 tile_set = ExtResource("3_0ha60")
 
 [node name="Player" parent="." instance=ExtResource("1_itxqv")]
-position = Vector2(71, 99)
-
-[node name="BasicEnemy" parent="." instance=ExtResource("4_brvut")]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
-position = Vector2(431, 141)
-
-[node name="BasicEnemy3" parent="." instance=ExtResource("4_brvut")]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
-position = Vector2(728, 283)
-
-[node name="BasicEnemy4" parent="." instance=ExtResource("4_brvut")]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
-position = Vector2(-67, 579)
-
-[node name="BasicEnemy5" parent="." instance=ExtResource("4_brvut")]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
-position = Vector2(917, 600)
-
-[node name="BasicEnemy6" parent="." instance=ExtResource("4_brvut")]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
-position = Vector2(280, 840)
-
-[node name="BasicEnemy7" parent="." instance=ExtResource("4_brvut")]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
-position = Vector2(964, 290)
-
-[node name="BasicEnemy8" parent="." instance=ExtResource("4_brvut")]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
-position = Vector2(676, 808)
-
-[node name="BasicEnemy9" parent="." instance=ExtResource("4_brvut")]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
-position = Vector2(1062, 451)
-
-[node name="BasicEnemy2" parent="." instance=ExtResource("4_brvut")]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
-position = Vector2(474, 556)
+position = Vector2(320, 178)
