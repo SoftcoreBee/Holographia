@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://brqoyuppl0tem"]
+[gd_scene load_steps=6 format=3 uid="uid://brqoyuppl0tem"]
 
 [ext_resource type="Script" uid="uid://b1kjhgy22xxjj" path="res://script/basic_enemy.gd" id="1_0xbl2"]
 [ext_resource type="Texture2D" uid="uid://w5jpylsengyw" path="res://asset/sprites/basic_enemy.png" id="1_3puoo"]
+[ext_resource type="PackedScene" uid="uid://bafnlt6fjx7wj" path="res://scene/health_component.tscn" id="2_yveyc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yveyc"]
 radius = 17.0
@@ -21,6 +22,8 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_yveyc")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_yveyc")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
