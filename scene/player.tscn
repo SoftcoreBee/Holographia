@@ -5,20 +5,22 @@
 [ext_resource type="PackedScene" uid="uid://k5xwm65a3x1b" path="res://scene/ability/sword_ability_controller.tscn" id="2_fvtld"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hjaqi"]
-radius = 5.0
+radius = 8.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 0
+motion_mode = 1
 script = ExtResource("1_hjaqi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_hjaqi")
 
 [node name="AbilityManager" type="Node" parent="."]
 
 [node name="SwordAbilityController" parent="AbilityManager" instance=ExtResource("2_fvtld")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
 texture = ExtResource("1_xo3ru")
 offset = Vector2(0, -8)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5)
-shape = SubResource("CircleShape2D_hjaqi")
