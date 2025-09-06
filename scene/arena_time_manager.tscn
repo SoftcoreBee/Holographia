@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://cdrfymdt71ptq"]
+[gd_scene load_steps=2 format=3 uid="uid://cdrfymdt71ptq"]
+
+[ext_resource type="Script" uid="uid://dbi4exgt6oevb" path="res://script/timer.gd" id="1_r2p77"]
 
 [node name="ArenaTimeManager" type="Node"]
+script = ExtResource("1_r2p77")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 60.0

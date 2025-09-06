@@ -31,6 +31,7 @@ health_component = NodePath("../HealthComponent")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_3puoo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
