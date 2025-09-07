@@ -1,6 +1,7 @@
 extends Node
 
 signal experience_update(current_experience: float, target_experience: float)
+signal level_up(new_level: int)
 
 const TARGET_EXPERIENCE_GROWTH = 5
 
@@ -19,6 +20,7 @@ func increment_experience(number: float):
         target_experience += TARGET_EXPERIENCE_GROWTH
         current_experience = 0
         experience_update.emit(current_experience, target_experience)
+        level_up.emit(current_level)
 
 func on_experience_gem_collected(number: float):
     increment_experience(number)
