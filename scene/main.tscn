@@ -6,16 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://2wx71yw4gaks" path="res://scene/gamer_cam.tscn" id="1_wp4xf"]
 [ext_resource type="PackedScene" uid="uid://cdrfymdt71ptq" path="res://scene/arena_time_manager.tscn" id="2_4j5ol"]
 [ext_resource type="TileSet" uid="uid://bnlgbpnjk8pg7" path="res://asset/resources/grass.tres" id="3_0ha60"]
-[ext_resource type="Script" uid="uid://dbi4exgt6oevb" path="res://script/timer.gd" id="3_p1hux"]
 [ext_resource type="PackedScene" uid="uid://dlrpqgev04pku" path="res://scene/experience_manager.tscn" id="5_b5f6u"]
+[ext_resource type="PackedScene" uid="uid://dij6b37rnhorp" path="res://scene/experience_bar.tscn" id="8_of57s"]
 
 [node name="Main" type="Node"]
 
 [node name="ArenaTimeUI" parent="." node_paths=PackedStringArray("arena_time_manager") instance=ExtResource("1_0ha60")]
 arena_time_manager = NodePath("../ArenaTimeManager")
 
+[node name="ExperienceBar" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("8_of57s")]
+experience_manager = NodePath("../ExperienceManager")
+
 [node name="ArenaTimeManager" parent="." instance=ExtResource("2_4j5ol")]
-script = ExtResource("3_p1hux")
 
 [node name="EnemyManager" parent="." instance=ExtResource("1_brvut")]
 
