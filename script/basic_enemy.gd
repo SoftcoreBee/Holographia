@@ -4,8 +4,6 @@ const MAX_SPEED = 50
 
 @onready var health_component = $HealthComponent
 
-func _ready():
-    $Area2D.area_entered.connect(on_area_entered)
 
 
 func _process(_delta): 
@@ -19,6 +17,3 @@ func get_direction_to_player():
     if player != null:
         return (player.global_position - global_position).normalized()
     return Vector2.ZERO
-
-func on_area_entered(other_area: Area2D):
-    health_component.damage(100)

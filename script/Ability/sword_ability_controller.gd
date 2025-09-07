@@ -3,6 +3,7 @@ extends Node
 const MAX_RANGE = 150
 
 @export var sword_ability_scene: PackedScene
+var damage = 5
 
 
 func _ready():
@@ -27,8 +28,10 @@ func _on_timer_timeout():
         return a_distance < b_distance
     )
     
-    var sword_instance = sword_ability_scene.instantiate() as Node2D
-    enemies[0].get_parent().add_child(sword_instance)
+    var sword_instance = sword_ability_scene.instantiate() as SwordAbility
+    player.get_parent().add_child(sword_instance)
+    sword_instance.hitbox_component.damage = damage
+
     sword_instance.global_position = enemies[0].global_position
     sword_instance.global_position += Vector2.RIGHT.rotated(randf_range(0, TAU)) * 4
 
