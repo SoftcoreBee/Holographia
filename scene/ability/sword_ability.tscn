@@ -92,7 +92,7 @@ libraries = {
 autoplay = "swing"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
+modulate = Color(0, 0.109375, 1, 1)
 texture = ExtResource("1_wbme0")
 offset = Vector2(0, -4)
 

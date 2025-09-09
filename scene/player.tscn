@@ -1,23 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://cd7sqnd46xupa"]
+[gd_scene load_steps=7 format=3 uid="uid://cd7sqnd46xupa"]
 
 [ext_resource type="Script" uid="uid://b3q5pauq0pqnj" path="res://script/player.gd" id="1_hjaqi"]
 [ext_resource type="Texture2D" uid="uid://dybw5y3bxmrdc" path="res://asset/sprites/player.png" id="1_xo3ru"]
+[ext_resource type="PackedScene" uid="uid://bafnlt6fjx7wj" path="res://scene/health_component.tscn" id="2_ct4mp"]
 [ext_resource type="PackedScene" uid="uid://k5xwm65a3x1b" path="res://scene/ability/sword_ability_controller.tscn" id="2_fvtld"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_hjaqi"]
-radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fvtld"]
 radius = 35.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hjaqi"]
+radius = 8.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 0
 motion_mode = 1
 script = ExtResource("1_hjaqi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7)
-shape = SubResource("CircleShape2D_hjaqi")
+[node name="HealthComponent" parent="." instance=ExtResource("2_ct4mp")]
+max_health = 20.0
 
 [node name="AbilityManager" type="Node" parent="."]
 
@@ -35,3 +35,7 @@ shape = SubResource("CircleShape2D_fvtld")
 modulate = Color(0, 0, 0, 1)
 texture = ExtResource("1_xo3ru")
 offset = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_hjaqi")
