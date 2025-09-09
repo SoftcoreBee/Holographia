@@ -48,6 +48,10 @@ folder_colors={
 "res://script/": "pink"
 }
 
+[global_group]
+
+Entities=""
+
 [gui]
 
 theme/custom_font="uid://b5h0wkfocr44w"
