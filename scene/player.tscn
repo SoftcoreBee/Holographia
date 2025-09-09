@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cd7sqnd46xupa"]
+[gd_scene load_steps=8 format=3 uid="uid://cd7sqnd46xupa"]
 
 [ext_resource type="Script" uid="uid://b3q5pauq0pqnj" path="res://script/player.gd" id="1_hjaqi"]
 [ext_resource type="Texture2D" uid="uid://dybw5y3bxmrdc" path="res://asset/sprites/player.png" id="1_xo3ru"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fvtld"]
 radius = 35.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ct4mp"]
+size = Vector2(8, 15)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hjaqi"]
 radius = 8.0
@@ -23,11 +26,15 @@ max_health = 20.0
 
 [node name="SwordAbilityController" parent="AbilityManager" instance=ExtResource("2_fvtld")]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="DamageIntervalTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="PickupArea2D" type="Area2D" parent="."]
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea2D"]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_fvtld")
 
@@ -35,6 +42,14 @@ shape = SubResource("CircleShape2D_fvtld")
 modulate = Color(0, 0, 0, 1)
 texture = ExtResource("1_xo3ru")
 offset = Vector2(0, -8)
+
+[node name="CollisionArea2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea2D"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_ct4mp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
