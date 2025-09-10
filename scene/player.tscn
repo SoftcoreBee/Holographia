@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cd7sqnd46xupa"]
+[gd_scene load_steps=10 format=3 uid="uid://cd7sqnd46xupa"]
 
 [ext_resource type="Script" uid="uid://b3q5pauq0pqnj" path="res://script/player.gd" id="1_hjaqi"]
 [ext_resource type="Texture2D" uid="uid://dybw5y3bxmrdc" path="res://asset/sprites/player.png" id="1_xo3ru"]
@@ -12,6 +12,11 @@ radius = 35.0
 size = Vector2(10, 18)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hjaqi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ct4mp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ct4mp"]
+bg_color = Color(0.914, 0.57, 1, 1)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 0
@@ -62,5 +67,8 @@ offset_top = -28.0
 offset_right = 16.0
 offset_bottom = -22.0
 pivot_offset = Vector2(16, 3)
+theme_override_styles/background = SubResource("StyleBoxEmpty_ct4mp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ct4mp")
 max_value = 1.0
+value = 0.5
 show_percentage = false
