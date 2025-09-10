@@ -16,7 +16,7 @@ size = Vector2(10, 18)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ct4mp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ct4mp"]
-bg_color = Color(0.914, 0.57, 1, 1)
+bg_color = Color(0.57, 1, 0.707734, 1)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 0

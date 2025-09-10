@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dij6b37rnhorp"]
+[gd_scene load_steps=4 format=3 uid="uid://dij6b37rnhorp"]
 
 [ext_resource type="Script" uid="uid://catj5i4cu8l01" path="res://script/experience_bar.gd" id="1_bl1sx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bl1sx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_687fn"]
+bg_color = Color(0.1323, 0.23184, 0.63, 0.560784)
 
 [node name="ExperienceBar" type="CanvasLayer"]
 script = ExtResource("1_bl1sx")
@@ -18,6 +23,8 @@ custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 size_flags_vertical = 8
 mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxEmpty_bl1sx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_687fn")
 max_value = 1.0
 value = 0.5
 show_percentage = false
