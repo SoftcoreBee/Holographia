@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://birl86jjwa4sl"]
+[gd_scene load_steps=3 format=3 uid="uid://birl86jjwa4sl"]
 
-[ext_resource type="Script" uid="uid://bwnidahuddigh" path="res://script/victory_screen.gd" id="1_ieie7"]
+[ext_resource type="Script" uid="uid://bwnidahuddigh" path="res://script/end_screen.gd" id="1_ieie7"]
 
-[node name="VictoryScreen" type="CanvasLayer"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ieie7"]
+
+[node name="EndScreen" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_ieie7")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -16,6 +19,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ieie7")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
 layout_mode = 2
@@ -27,7 +31,9 @@ theme_override_constants/margin_bottom = 8
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="TitleLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+modulate = Color(0, 0.882813, 1, 1)
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "VICTORY"
@@ -36,10 +42,14 @@ vertical_alignment = 1
 
 [node name="RestartButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
+modulate = Color(0, 0.882353, 1, 1)
 layout_mode = 2
 text = "RESTART"
+flat = true
 
 [node name="QuitButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
+modulate = Color(0, 0.882353, 1, 1)
 layout_mode = 2
 text = "QUIT"
+flat = true
