@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2a0oain7hgmv"]
+
+[ext_resource type="Script" uid="uid://dnjfx7yy1qn0h" path="res://script/Ability/ninja_ability.gd" id="1_m5lor"]
+[ext_resource type="Texture2D" uid="uid://c54wmy62qnfwl" path="res://asset/sprites/ninja.png" id="2_a21st"]
+[ext_resource type="PackedScene" uid="uid://toxnwctac8ir" path="res://scene/hitbox_component.tscn" id="3_yj7p6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7cl0e"]
+radius = 9.0
+
+[node name="NinjaAbility" type="Node2D"]
+script = ExtResource("1_m5lor")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.564819, 0.101563, 1)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_a21st")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("3_yj7p6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(-3, 0)
+shape = SubResource("CircleShape2D_7cl0e")

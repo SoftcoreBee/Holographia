@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://bf2kxwn7wdhgd"]
+
+[ext_resource type="Script" uid="uid://nh41tw24qoh" path="res://asset/resources/upgrades/ability_upgrade.gd" id="1_b4r6k"]
+
+[resource]
+script = ExtResource("1_b4r6k")
+id = "ninja_abillity"
+name = "Ninja Speed"
+description = "buffs damage by 2, speed increase."
+metadata/_custom_type_script = "uid://nh41tw24qoh"

@@ -6,4 +6,4 @@
 script = ExtResource("1_wvoie")
 id = "sword_rate"
 name = "Sword Quickness"
-description = "Increases sword attack rate by 10%."
+description = "Increases sword attack rate by 15%."

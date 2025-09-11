@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://qa7pu6xs3335"]
+[gd_scene load_steps=16 format=4 uid="uid://qa7pu6xs3335"]
 
 [ext_resource type="PackedScene" uid="uid://c7plh6iqr6v8o" path="res://scene/arena_time_ui.tscn" id="1_0ha60"]
 [ext_resource type="PackedScene" uid="uid://7uusa4tilrac" path="res://scene/enemy_manager.tscn" id="1_brvut"]
@@ -10,7 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://dlrpqgev04pku" path="res://scene/experience_manager.tscn" id="5_b5f6u"]
 [ext_resource type="PackedScene" uid="uid://cch8fdklnvxye" path="res://scene/upgrade_manager.tscn" id="6_b5f6u"]
 [ext_resource type="PackedScene" uid="uid://dij6b37rnhorp" path="res://scene/experience_bar.tscn" id="8_of57s"]
+[ext_resource type="Script" uid="uid://nh41tw24qoh" path="res://asset/resources/upgrades/ability_upgrade.gd" id="9_hybxs"]
 [ext_resource type="TileSet" uid="uid://d4lm660m0e26i" path="res://tileset3.tres" id="9_tqoya"]
+[ext_resource type="Resource" uid="uid://c7v7l3g3npmlc" path="res://asset/resources/upgrades/sword_rate.tres" id="10_v2gmf"]
+[ext_resource type="Resource" uid="uid://bf2kxwn7wdhgd" path="res://asset/resources/upgrades/ninja_speed.tres" id="11_jcbur"]
+[ext_resource type="PackedScene" uid="uid://cjgtpvdctdc6y" path="res://scene/experience_gem.tscn" id="15_v2gmf"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_tqoya")
@@ -29,6 +33,7 @@ experience_manager = NodePath("../ExperienceManager")
 [node name="ExperienceManager" parent="." instance=ExtResource("5_b5f6u")]
 
 [node name="UpgradeManager" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("6_b5f6u")]
+upgrade_pool = Array[ExtResource("9_hybxs")]([ExtResource("10_v2gmf"), ExtResource("11_jcbur")])
 experience_manager = NodePath("../ExperienceManager")
 
 [node name="GamerCam" parent="." instance=ExtResource("1_wp4xf")]
@@ -46,3 +51,24 @@ y_sort_enabled = true
 position = Vector2(320, 178)
 
 [node name="Foreground" type="Node2D" parent="." groups=["foreground_layer"]]
+
+[node name="ExperienceGem" parent="Foreground" instance=ExtResource("15_v2gmf")]
+position = Vector2(183, 169)
+
+[node name="ExperienceGem2" parent="Foreground" instance=ExtResource("15_v2gmf")]
+position = Vector2(206, 225)
+
+[node name="ExperienceGem3" parent="Foreground" instance=ExtResource("15_v2gmf")]
+position = Vector2(156, 204)
+
+[node name="ExperienceGem4" parent="Foreground" instance=ExtResource("15_v2gmf")]
+position = Vector2(188, 197)
+
+[node name="ExperienceGem5" parent="Foreground" instance=ExtResource("15_v2gmf")]
+position = Vector2(141, 169)
+
+[node name="ExperienceGem6" parent="Foreground" instance=ExtResource("15_v2gmf")]
+position = Vector2(194, 125)
+
+[node name="ExperienceGem7" parent="Foreground" instance=ExtResource("15_v2gmf")]
+position = Vector2(160, 142)
