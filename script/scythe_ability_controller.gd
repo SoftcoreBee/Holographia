@@ -13,11 +13,11 @@ func swing_scythe():
     if player == null:
         return
     
-    # Get the player's current movement direction
+    
     var movement_vector = _get_movement_vector()
     var movement_direction = movement_vector.normalized()
     
-    # If player isn't moving, default to facing right
+    
     if movement_vector.length() < 0.1:
         movement_direction = Vector2.RIGHT
     
@@ -25,16 +25,14 @@ func swing_scythe():
     var foreground_layer = get_tree().get_first_node_in_group("foreground_layer")
     foreground_layer.add_child(scythe_instance)
     
-    # Set damage if the scythe has a hitbox component
+    
     var hitbox_component = scythe_instance.get_node("HitboxComponent") as HitboxComponent
     if hitbox_component:
         hitbox_component.damage = damage
     
-    # Position the scythe in front of the player in movement direction
     scythe_instance.global_position = player.global_position
     scythe_instance.global_position += movement_direction * 20
-    
-    # Set rotation to match movement direction
+
     scythe_instance.rotation = movement_direction.angle()
 
 func _get_movement_vector():
