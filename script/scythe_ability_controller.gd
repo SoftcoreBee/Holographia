@@ -13,7 +13,7 @@ func swing_scythe():
     if player == null:
         return
     
-    #hello
+ 
     var movement_vector = _get_movement_vector()
     var movement_direction = movement_vector.normalized()
     
