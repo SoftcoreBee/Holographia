@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://dhrddejblmr82"]
+
+[ext_resource type="Script" uid="uid://nh41tw24qoh" path="res://asset/resources/upgrades/ability_upgrade.gd" id="1_x8laq"]
+
+[resource]
+script = ExtResource("1_x8laq")
+id = "scythe_damage"
+name = "Scythe Damage"
+description = "Increases Scythe Damage by 10%"
+metadata/_custom_type_script = "uid://nh41tw24qoh"

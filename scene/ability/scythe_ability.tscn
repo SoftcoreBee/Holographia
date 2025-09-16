@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://xxikodnytgl8"]
+
+[ext_resource type="Script" uid="uid://dqoa3g84vwwpf" path="res://script/scythe_ability.gd" id="1_4cthu"]
+[ext_resource type="Texture2D" uid="uid://bkqy0ycyujy16" path="res://asset/sprites/scythe.png" id="1_xo5sr"]
+[ext_resource type="PackedScene" uid="uid://toxnwctac8ir" path="res://scene/hitbox_component.tscn" id="2_agprr"]
+
+[sub_resource type="Animation" id="Animation_agprr"]
+resource_name = "swing"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 1.96667, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.74533, 2.70526, 1.74533, 1.74533, 2.70526, 1.78896]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4cthu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sby67"]
+_data = {
+&"RESET": SubResource("Animation_4cthu"),
+&"swing": SubResource("Animation_agprr")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cthu"]
+size = Vector2(10, 20)
+
+[node name="ScytheAbility" type="Node2D"]
+script = ExtResource("1_4cthu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_sby67")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.386719, 1, 0.669403, 1)
+texture = ExtResource("1_xo5sr")
+flip_h = true
+
+[node name="HitboxComponent" parent="." instance=ExtResource("2_agprr")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(5, 0)
+shape = SubResource("RectangleShape2D_4cthu")

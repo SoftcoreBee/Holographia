@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5coixjal53qu"]
+
+[ext_resource type="Script" uid="uid://ie5e5q80dmbb" path="res://script/scythe_ability_controller.gd" id="1_43bml"]
+[ext_resource type="PackedScene" uid="uid://xxikodnytgl8" path="res://scene/ability/scythe_ability.tscn" id="2_6t7a0"]
+
+[node name="ScytheAbilityController" type="Node"]
+script = ExtResource("1_43bml")
+scythe_ability_scene = ExtResource("2_6t7a0")
